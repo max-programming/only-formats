@@ -1,6 +1,6 @@
 import Editor from 'react-simple-code-editor';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/palenight';
+import theme from 'prism-react-renderer/themes/nightOwl';
 import { Box } from '@chakra-ui/react';
 import { CSSProperties } from 'react';
 
