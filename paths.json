@@ -1,0 +1,14 @@
+[
+  {
+    "id": "/formatter/js",
+    "title": "JavaScript/TypeScript/React Code Formatter",
+    "description": "Format any of your JS/TS or React code!",
+    "image": "/icons/js.svg"
+  },
+  {
+    "id": "/formatter/css",
+    "title": "CSS Code Formatter",
+    "description": "Format any of your CSS or SASS code!",
+    "image": "/icons/css.svg"
+  }
+]
