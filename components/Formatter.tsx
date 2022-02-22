@@ -25,7 +25,6 @@ export default function Formatter({
   return (
     <Box
       maxW={'full'}
-      bg={useColorModeValue('white', 'gray.900')}
       boxShadow={'2xl'}
       rounded={'md'}
       p={6}

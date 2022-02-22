@@ -6,6 +6,8 @@ import {
   Text,
   Stack,
   Image,
+  Flex,
+  BackgroundProps,
 } from '@chakra-ui/react';
 
 // const IMAGE =
@@ -20,13 +22,15 @@ interface Props {
 export default function PathCard({ title, description, image }: Props) {
   return (
     <Center py={12}>
-      <Box
+      <Flex
+        direction='column'
+        justify='space-between'
         role={'group'}
-        p={6}
+        p={10}
         maxW={'330px'}
         w={'xl'}
-        bg={useColorModeValue('white', 'gray.800')}
-        boxShadow={'2xl'}
+        bg={useColorModeValue('whiteAlpha.100', 'gray.800')}
+        boxShadow={useColorModeValue('2xl', 'dark-lg')}
         rounded={'lg'}
         pos={'relative'}
         zIndex={1}
@@ -35,6 +39,7 @@ export default function PathCard({ title, description, image }: Props) {
         _hover={{
           transform: 'translateY(-2px)',
           boxShadow: 'lg',
+          bg: useColorModeValue('whiteAlpha.700', 'gray.700'),
         }}
       >
         <Box rounded={'lg'} mt={-12} pos={'relative'} height={'230px'}>
@@ -42,15 +47,12 @@ export default function PathCard({ title, description, image }: Props) {
             rounded={'lg'}
             height={230}
             width={282}
-            objectFit={'fill'}
+            objectFit={'scale-down'}
             src={image}
             alt=''
           />
         </Box>
-        <Stack pt={10} align={'center'}>
-          <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
-            Brand
-          </Text>
+        <Stack align={'center'} flex={2}>
           <Heading
             textAlign='center'
             fontSize={'2xl'}
@@ -65,7 +67,7 @@ export default function PathCard({ title, description, image }: Props) {
             </Text>
           </Stack>
         </Stack>
-      </Box>
+      </Flex>
     </Center>
   );
 }
