@@ -1,4 +1,11 @@
-import { Box, Grid, Switch, Text, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  Grid,
+  Switch,
+  Text,
+  useBreakpointValue,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import CodeEditor from '@/components/CodeEditor';
 import CodeDisplay from '@/components/CodeDisplay';
 
@@ -25,7 +32,13 @@ export default function Formatter({
       overflow={'hidden'}
       mt='12'
     >
-      <Grid templateColumns='repeat(2, 1fr)' gap={6}>
+      <Grid
+        templateColumns={useBreakpointValue({
+          lg: 'repeat(2, 1fr)',
+          base: 'repeat(1, 1fr)',
+        })}
+        gap={6}
+      >
         <Box>
           <Text fontSize={'xl'} mb='2'>
             Input Code

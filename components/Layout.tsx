@@ -23,7 +23,7 @@ const Layout = ({ children, title, description }: PropsWithChildren<Props>) => (
       openGraph={{ title, description }}
     />
     <Nav />
-    <Container maxW={'9xl'}>
+    <Container maxW={'8xl'}>
       <motion.main
         initial='hidden'
         animate='enter'
