@@ -10,6 +10,7 @@ import tsParser from 'prettier/parser-typescript';
 import { useState } from 'react';
 import Formatter from '@/components/Formatter';
 import Header from '@/components/Header';
+import { OnChange } from '@monaco-editor/react';
 
 const JS: NextPage = () => {
   const path = usePath('js');
@@ -37,7 +38,8 @@ const JS: NextPage = () => {
     );
   };
 
-  const handleChange = (val: string) => {
+  const handleChange: OnChange = val => {
+    if (!val) return;
     setUnformatted(val);
     if (val.trim() === '') return setFormatted('');
     format({ val, isTS, indentation: indent });
@@ -45,7 +47,7 @@ const JS: NextPage = () => {
 
   return (
     <>
-      <Layout title={path.title} description={path.description}>
+      <Layout title={path.title}>
         <Header title={path.title} imageSrc={path.image} />
         <Setting title='Format TypeScript' img='/icons/ts.svg'>
           <Switch

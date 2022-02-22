@@ -1,25 +1,35 @@
 import Layout from '@/components/Layout';
 import type { NextPage } from 'next';
+import Setting from '@/components/Setting';
+import { Input } from '@chakra-ui/react';
 import usePath from '@/utils/usePath';
 import formatCode from '@/utils/formatCode';
 
-import cssParser from 'prettier/parser-postcss';
+import htmlParser from 'prettier/parser-html';
 import { useState } from 'react';
 import Formatter from '@/components/Formatter';
 import Header from '@/components/Header';
 import { OnChange } from '@monaco-editor/react';
 
-const CSS: NextPage = () => {
-  const path = usePath('css');
+const HTMLFormat: NextPage = () => {
+  const path = usePath('html');
+  const [indent, setIndent] = useState(2);
   const [unformatted, setUnformatted] = useState('');
   const [formatted, setFormatted] = useState('');
 
-  const format = ({ val }: { val?: string }) => {
+  const format = ({
+    val,
+    indentation,
+  }: {
+    val?: string;
+    indentation?: number;
+  }) => {
     setFormatted(
       formatCode({
         code: val || unformatted,
-        language: 'scss',
-        parser: cssParser,
+        language: 'html',
+        parser: htmlParser,
+        options: { tabWidth: indentation || indent },
       })
     );
   };
@@ -28,15 +38,27 @@ const CSS: NextPage = () => {
     if (!val) return;
     setUnformatted(val);
     if (val.trim() === '') return setFormatted('');
-    format({ val });
+    format({ val, indentation: indent });
   };
 
   return (
     <>
       <Layout title={path.title}>
         <Header title={path.title} imageSrc={path.image} />
+        <Setting title='Indentation'>
+          <Input
+            type='number'
+            w={'sm'}
+            value={indent}
+            onChange={e => {
+              if (e.target.value.includes('e')) return;
+              setIndent(parseInt(e.target.value));
+              format({ indentation: parseInt(e.target.value) });
+            }}
+          />
+        </Setting>
         <Formatter
-          language={'scss'}
+          language={'html'}
           unformattedCode={unformatted || ''}
           formattedCode={formatted || ''}
           handleChange={handleChange}
@@ -46,4 +68,4 @@ const CSS: NextPage = () => {
   );
 };
 
-export default CSS;
+export default HTMLFormat;

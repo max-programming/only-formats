@@ -25,10 +25,10 @@ export default function CodeDisplay({
             style={style}
             textAlign='left'
             m='1em 0'
-            p='0.5rem'
+            p='25px'
             overflow='auto'
             fontFamily='monospace'
-            minH={500}
+            maxH={500}
             fontSize={20}
             rounded='xl'
           >

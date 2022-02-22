@@ -3,7 +3,6 @@ import {
   Center,
   useColorModeValue,
   Heading,
-  Text,
   Stack,
   Image,
   Flex,
@@ -15,12 +14,11 @@ import {
 interface Props {
   image: string;
   title: string;
-  description: string;
 }
 
-export default function PathCard({ title, description, image }: Props) {
+export default function PathCard({ title, image }: Props) {
   return (
-    <Center py={12}>
+    <Center py={12} w='full'>
       <Flex
         direction='column'
         justify='space-between'
@@ -60,11 +58,6 @@ export default function PathCard({ title, description, image }: Props) {
           >
             {title}
           </Heading>
-          <Stack direction={'row'} align={'center'}>
-            <Text textAlign='center' fontWeight={800} fontSize={'xl'}>
-              {description}
-            </Text>
-          </Stack>
         </Stack>
       </Flex>
     </Center>

@@ -12,20 +12,17 @@ const Home: NextPage = () => {
         <Grid
           mt='16'
           templateColumns={useBreakpointValue({
-            lg: 'repeat(5, 1fr)',
-            md: 'repeat(3, 1fr)',
-            sm: 'repeat(1, 1fr)',
+            base: 'repeat(1, 1fr)',
+            md: 'repeat(2, 1fr)',
+            lg: 'repeat(3, 1fr)',
+            '2xl': 'repeat(4, 1fr)',
           })}
           gap={10}
         >
           {paths.map(path => (
             <Link key={path.id} href={path.id}>
               <a>
-                <PathCard
-                  title={path.title}
-                  description={path.description}
-                  image={path.image}
-                />
+                <PathCard title={path.title} image={path.image} />
               </a>
             </Link>
           ))}

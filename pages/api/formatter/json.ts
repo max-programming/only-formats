@@ -16,7 +16,7 @@ interface Body {
   unformatted: string;
 }
 
-export default function jsFormat(
+export default function jsonFormat(
   req: NextApiRequest,
   res: NextApiResponse<Partial<Data>>
 ) {

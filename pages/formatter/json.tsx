@@ -9,6 +9,7 @@ import jsonParser from 'prettier/parser-babel';
 import { useState } from 'react';
 import Formatter from '@/components/Formatter';
 import Header from '@/components/Header';
+import { OnChange } from '@monaco-editor/react';
 
 const JSONFormat: NextPage = () => {
   const path = usePath('json');
@@ -33,7 +34,8 @@ const JSONFormat: NextPage = () => {
     );
   };
 
-  const handleChange = (val: string) => {
+  const handleChange: OnChange = val => {
+    if (!val) return;
     setUnformatted(val);
     if (val.trim() === '') return setFormatted('');
     format({ val, indentation: indent });
@@ -41,7 +43,7 @@ const JSONFormat: NextPage = () => {
 
   return (
     <>
-      <Layout title={path.title} description={path.description}>
+      <Layout title={path.title}>
         <Header title={path.title} imageSrc={path.image} />
         <Setting title='Indentation'>
           <Input
