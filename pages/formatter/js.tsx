@@ -47,7 +47,7 @@ const JS: NextPage = () => {
     <>
       <Layout title={path.title} description={path.description}>
         <Header title={path.title} imageSrc={path.image} />
-        <Setting title='Format TypeScript'>
+        <Setting title='Format TypeScript' img='/icons/ts.svg'>
           <Switch
             size='lg'
             isChecked={isTS}

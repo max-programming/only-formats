@@ -1,14 +1,14 @@
-import { Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Image, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { PropsWithChildren } from 'react';
 
 interface Props {
   title: string;
-  description?: string;
+  img?: string;
 }
 
 export default function Setting({
   title,
-  description,
+  img,
   children,
 }: PropsWithChildren<Props>) {
   return (
@@ -20,23 +20,12 @@ export default function Setting({
       direction='row'
       justify='space-between'
     >
-      <Stack direction='row' alignItems='center'>
+      <Stack direction='row' alignItems='center' gap={2}>
+        {img && <Image src={img} alt='' w='10' />}
         <Text fontWeight='semibold' fontSize={'2xl'}>
           {title}
         </Text>
       </Stack>
-
-      {/* {description && (
-        <Stack
-          direction={{ base: 'column', md: 'row' }}
-          justifyContent='space-between'
-          alignItems={'center'}
-        >
-          <Text fontSize={{ base: 'sm' }} textAlign={'left'} maxW={'4xl'}>
-            {description}
-          </Text>
-        </Stack>
-      )} */}
       {children}
     </Stack>
   );
