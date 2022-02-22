@@ -1,3 +1,11 @@
+*::selection {
+  background: rgba(96, 157, 159, 0.5);
+}
+
+img {
+  user-select: none;
+}
+
 html,
 body {
   padding: 0;
