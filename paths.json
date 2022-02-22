@@ -10,5 +10,11 @@
     "title": "CSS Code Formatter",
     "description": "Format any of your CSS or SASS code!",
     "image": "/icons/css.svg"
+  },
+  {
+    "id": "/formatter/json",
+    "title": "JSON Code Formatter",
+    "description": "Format JSON Code!",
+    "image": "/icons/json.svg"
   }
 ]
