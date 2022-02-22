@@ -1,5 +1,9 @@
 *::selection {
-  background: rgba(96, 157, 159, 0.5);
+  background: #409fff40;
+}
+
+:root {
+  color-scheme: dark;
 }
 
 img {

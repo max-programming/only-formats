@@ -12,11 +12,11 @@ const Home: NextPage = () => {
         <Grid
           mt='16'
           templateColumns={useBreakpointValue({
-            base: 'repeat(5, 1fr)',
+            lg: 'repeat(5, 1fr)',
             md: 'repeat(3, 1fr)',
             sm: 'repeat(1, 1fr)',
           })}
-          gap={6}
+          gap={10}
         >
           {paths.map(path => (
             <Link key={path.id} href={path.id}>

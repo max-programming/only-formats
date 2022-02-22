@@ -7,7 +7,6 @@ import {
   Stack,
   Image,
   Flex,
-  BackgroundProps,
 } from '@chakra-ui/react';
 
 // const IMAGE =

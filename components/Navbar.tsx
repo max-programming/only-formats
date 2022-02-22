@@ -3,13 +3,11 @@ import {
   Box,
   Flex,
   Link,
-  Button,
   useColorModeValue,
   Stack,
   useColorMode,
   Heading,
 } from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 
 const NavLink = ({ children }: PropsWithChildren<{}>) => (
@@ -28,10 +26,9 @@ const NavLink = ({ children }: PropsWithChildren<{}>) => (
 );
 
 export default function Nav() {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={6}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <NextLink href='/'>
             <a>
@@ -40,11 +37,7 @@ export default function Nav() {
           </NextLink>
 
           <Flex alignItems={'center'}>
-            <Stack direction={'row'} spacing={7}>
-              <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
-            </Stack>
+            <Stack direction={'row'} spacing={7}></Stack>
           </Flex>
         </Flex>
       </Box>
