@@ -62,7 +62,7 @@ export default function PathCard({ title, image }: Props) {
           </Heading>
         </Stack>
       </Flex> */}
-      <LinkBox as='article' maxW='sm' p='5' borderWidth='1px' rounded='md'>
+      <LinkBox as='article' justifyContent='center' alignItems='center' textAlign='center' maxW='sm' p='5' borderWidth='1px' rounded='md'>
         <Image
           rounded={'lg'}
           height={230}

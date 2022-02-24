@@ -1,7 +1,7 @@
 [
   {
     "id": "/formatter/js",
-    "title": "JavaScript/TypeScript/React Code Formatter",
+    "title": "JavaScript/TypeScript \n Code Formatter",
     "image": "/icons/js.svg"
   },
   {
@@ -10,13 +10,13 @@
     "image": "/icons/css.svg"
   },
   {
-    "id": "/formatter/json",
-    "title": "JSON Code Formatter",
-    "image": "/icons/json.svg"
-  },
-  {
     "id": "/formatter/html",
     "title": "HTML Code Formatter",
     "image": "/icons/html.svg"
+  },
+  {
+    "id": "/formatter/json",
+    "title": "JSON Code Formatter",
+    "image": "/icons/json.svg"
   }
 ]
