@@ -6,6 +6,8 @@ import {
   Stack,
   Image,
   Flex,
+  LinkBox,
+  LinkOverlay
 } from '@chakra-ui/react';
 
 // const IMAGE =
