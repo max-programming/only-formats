@@ -13,11 +13,12 @@ const Home: NextPage = () => {
           mt='16'
           templateColumns={useBreakpointValue({
             base: 'repeat(1, 1fr)',
-            md: 'repeat(2, 1fr)',
+            sm: 'repeat(2, 1fr)',
             lg: 'repeat(3, 1fr)',
             '2xl': 'repeat(4, 1fr)',
           })}
           gap={10}
+          placeItems='center'
         >
           {paths.map(path => (
             <Link key={path.id} href={path.id}>
