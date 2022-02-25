@@ -23,5 +23,10 @@
     "id": "/formatter/md",
     "title": "Markdown Code Formatter",
     "image": "https://simpleicons.vercel.app/markdown/fff"
+  },
+  {
+    "id": "/formatter/php",
+    "title": "PHP Code Formatter",
+    "image": "https://simpleicons.vercel.app/php/777BB4"
   }
 ]
