@@ -72,7 +72,7 @@ const JS: NextPage = () => {
           />
         </Setting>
         <Formatter
-          language={isTS ? 'ts' : 'js'}
+          language={isTS ? 'typescript' : 'javascript'}
           unformattedCode={unformatted || ''}
           formattedCode={formatted || ''}
           handleChange={handleChange}

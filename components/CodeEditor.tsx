@@ -13,7 +13,9 @@ export default function CodeEditor({ code, language, handleChange }: Props) {
       value={code}
       onChange={handleChange}
       theme='vs-dark'
-      height='300px'
+      height='500px'
+      width='100%'
+      options={{}}
     />
   );
 }

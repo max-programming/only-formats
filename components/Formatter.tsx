@@ -1,4 +1,4 @@
-import { Box, Grid, Text } from '@chakra-ui/react';
+import { Box, Flex, Grid, Text, useBreakpointValue } from '@chakra-ui/react';
 import CodeEditor from '@/components/CodeEditor';
 import CodeDisplay from '@/components/CodeDisplay';
 import { OnChange } from '@monaco-editor/react';
@@ -25,8 +25,8 @@ export default function Formatter({
       overflow={'hidden'}
       mt='12'
     >
-      <Grid templateColumns='repeat(1, 1fr)' gap={6}>
-        <Box>
+      <Flex gap={2} direction={'column'}>
+        <Box flex={2}>
           <Text fontSize={'xl'} mb='2'>
             Input Code
           </Text>
@@ -36,13 +36,13 @@ export default function Formatter({
             handleChange={handleChange}
           />
         </Box>
-        <Box>
+        <Box flex={1}>
           <Text fontSize={'xl'} mb='2'>
             Formatted Code
           </Text>
           <CodeDisplay language={language} code={formattedCode} />
         </Box>
-      </Grid>
+      </Flex>
     </Box>
   );
 }
