@@ -18,5 +18,10 @@
     "id": "/formatter/json",
     "title": "JSON Code Formatter",
     "image": "/icons/json.svg"
+  },
+  {
+    "id": "/formatter/md",
+    "title": "Markdown Code Formatter",
+    "image": "https://simpleicons.vercel.app/markdown/fff"
   }
 ]

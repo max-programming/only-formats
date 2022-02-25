@@ -45,7 +45,11 @@ const Search = () => {
               <SearchIcon />
             </InputLeftElement>
           </InputGroup>
-          <AutoCompleteList w='full'>
+          <AutoCompleteList
+            w='full'
+            justifyContent='center'
+            alignItems='center'
+          >
             {paths.map(path => (
               <NextLink key={path.id} href={path.id} passHref>
                 <a>
@@ -53,15 +57,12 @@ const Search = () => {
                     value={path.id}
                     label={path.title}
                     textTransform='capitalize'
-                    w='fit-content'
+                    justify='space-between'
+                    align='center'
+                    w='sm'
                   >
-                    <Image
-                      src={path.image}
-                      alt={path.title}
-                      borderRadius='full'
-                      width={19}
-                    />
                     <Text ml='4'>{path.title}</Text>
+                    <Image src={path.image} alt={path.title} width='10' />
                   </AutoCompleteItem>
                 </a>
               </NextLink>
