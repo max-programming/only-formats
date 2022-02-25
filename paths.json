@@ -2,22 +2,22 @@
   {
     "id": "/formatter/js",
     "title": "JavaScript/TypeScript Code Formatter",
-    "image": "/icons/js.svg"
+    "image": "https://simpleicons.vercel.app/javascript/F7DF1E"
   },
   {
     "id": "/formatter/css",
     "title": "CSS Code Formatter",
-    "image": "/icons/css.svg"
+    "image": "https://simpleicons.vercel.app/css3/1572B6"
   },
   {
     "id": "/formatter/html",
     "title": "HTML Code Formatter",
-    "image": "/icons/html.svg"
+    "image": "https://simpleicons.vercel.app/html5/E34F26"
   },
   {
     "id": "/formatter/json",
     "title": "JSON Code Formatter",
-    "image": "/icons/json.svg"
+    "image": "https://simpleicons.vercel.app/json/fff"
   },
   {
     "id": "/formatter/md",
