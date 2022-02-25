@@ -1,32 +1,48 @@
-import type { NextPage } from 'next';
-import Layout from '@/components/Layout';
-import paths from '@/paths.json';
-import PathCard from '@/components/PathCard';
-import { Grid, useBreakpointValue } from '@chakra-ui/react';
-import Link from 'next/link';
+import type { NextPage } from "next";
+import Layout from "@/components/Layout";
+import paths from "@/paths.json";
+import { Box, GridItem, Heading, Image, SimpleGrid } from "@chakra-ui/react";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
     <>
-      <Layout title='OnlyFormats'>
-        <Grid
-          mt='16'
-          templateColumns={useBreakpointValue({
-            base: 'repeat(1, 1fr)',
-            md: 'repeat(2, 1fr)',
-            lg: 'repeat(3, 1fr)',
-            '2xl': 'repeat(4, 1fr)',
-          })}
-          gap={10}
-        >
-          {paths.map(path => (
-            <Link key={path.id} href={path.id}>
-              <a>
-                <PathCard title={path.title} image={path.image} />
-              </a>
-            </Link>
+      <Layout title="OnlyFormats">
+        <SimpleGrid mt="16" columns={[1, 2, 3, 4]} spacing={5}>
+          {paths.map((path) => (
+            <GridItem key={path.id}>
+              <Link href={path.id}>
+                <a>
+                  <Box
+                    maxW="sm"
+                    transition="all 0.3s ease"
+                    borderWidth="2px"
+                    borderRadius="lg"
+                    overflow="hidden"
+                    _hover={{
+                      borderColor: "teal.100",
+                      transform: 'translateY(-10px)'
+                    }}
+                  >
+                    <Image
+                      rounded={"lg"}
+                      height={230}
+                      width={282}
+                      objectFit={"scale-down"}
+                      src={path.image}
+                      alt=""
+                    />
+                    <Box p={6}>
+                      <Heading textAlign="center" size="md">
+                        {path.title}
+                      </Heading>
+                    </Box>
+                  </Box>
+                </a>
+              </Link>
+            </GridItem>
           ))}
-        </Grid>
+        </SimpleGrid>
       </Layout>
     </>
   );

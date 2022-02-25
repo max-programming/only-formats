@@ -6,6 +6,8 @@ import {
   Stack,
   Image,
   Flex,
+  LinkBox,
+  LinkOverlay
 } from '@chakra-ui/react';
 
 // const IMAGE =
@@ -19,7 +21,7 @@ interface Props {
 export default function PathCard({ title, image }: Props) {
   return (
     <Center py={12} w='full'>
-      <Flex
+      {/* <Flex
         direction='column'
         justify='space-between'
         role={'group'}
@@ -59,7 +61,26 @@ export default function PathCard({ title, image }: Props) {
             {title}
           </Heading>
         </Stack>
-      </Flex>
+      </Flex> */}
+      <LinkBox as='article' justifyContent='center' alignItems='center' textAlign='center' maxW='sm' p='5' borderWidth='1px' rounded='md'>
+        <Image
+          rounded={'lg'}
+          height={230}
+          width={282}
+          objectFit={'scale-down'}
+          src={image}
+          alt=''
+        />
+        <Heading size='md' my='2'>
+          <LinkOverlay>
+            {title}
+          </LinkOverlay>
+        </Heading>
+        {/* <Text>
+    Catch up on what’s been cookin’ at Smashing and explore some of the most
+    popular community resources.
+  </Text> */}
+      </LinkBox>
     </Center>
   );
 }

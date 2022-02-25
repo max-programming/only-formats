@@ -1,7 +1,14 @@
 import Layout from '@/components/Layout';
 import type { NextPage } from 'next';
 import Setting from '@/components/Setting';
-import { Input, Switch } from '@chakra-ui/react';
+import { 
+  NumberInput, 
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+  Switch
+} from '@chakra-ui/react';
 import usePath from '@/utils/usePath';
 import formatCode from '@/utils/formatCode';
 
@@ -60,16 +67,16 @@ const JS: NextPage = () => {
           />
         </Setting>
         <Setting title='Indentation'>
-          <Input
-            type='number'
-            w={'sm'}
-            value={indent}
-            onChange={e => {
-              if (e.target.value.includes('e')) return;
-              setIndent(parseInt(e.target.value));
-              format({ indentation: parseInt(e.target.value), isTS });
-            }}
-          />
+          <NumberInput onChange={(_, val) => {
+                setIndent(val);
+                format({ indentation: val });
+            }} defaultValue={indent} min={1} max={10}>
+            <NumberInputField />
+            <NumberInputStepper>
+              <NumberIncrementStepper />
+              <NumberDecrementStepper />
+            </NumberInputStepper>
+          </NumberInput>
         </Setting>
         <Formatter
           language={isTS ? 'typescript' : 'javascript'}
