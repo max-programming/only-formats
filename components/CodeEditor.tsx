@@ -1,4 +1,6 @@
+import { theme } from '@chakra-ui/react';
 import Editor, { OnChange } from '@monaco-editor/react';
+import { PropagateLoader } from 'react-spinners';
 
 interface Props {
   code: string;
@@ -15,7 +17,7 @@ export default function CodeEditor({ code, language, handleChange }: Props) {
       theme='vs-dark'
       height='500px'
       width='100%'
-      options={{}}
+      loading={<PropagateLoader color={theme.colors.teal[100]} />}
     />
   );
 }
