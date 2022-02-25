@@ -19,7 +19,7 @@ import Header from '@/components/Header';
 import { OnChange } from '@monaco-editor/react';
 
 const PHPFormat: NextPage = () => {
-  const path = usePath('json');
+  const path = usePath('php');
   const [indent, setIndent] = useState(2);
   const [unformatted, setUnformatted] = useState('');
   const [formatted, setFormatted] = useState('');
