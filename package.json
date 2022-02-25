@@ -11,6 +11,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.5",
+    "@choc-ui/chakra-autocomplete": "^4.17.1",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
     "@monaco-editor/react": "^4.3.1",

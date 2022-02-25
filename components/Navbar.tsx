@@ -1,14 +1,72 @@
+import paths from '@/paths.json';
 import { PropsWithChildren } from 'react';
 import {
   Box,
-  Flex,
   Link,
   useColorModeValue,
-  Stack,
-  useColorMode,
+  Flex,
+  FormControl,
   Heading,
+  InputGroup,
+  Text,
+  Image,
+  InputLeftElement,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import {
+  AutoComplete,
+  AutoCompleteInput,
+  AutoCompleteItem,
+  AutoCompleteList,
+} from '@choc-ui/chakra-autocomplete';
+import { SearchIcon } from '@chakra-ui/icons';
+import { useRouter } from 'next/router';
+
+const Search = () => {
+  const router = useRouter();
+  return (
+    <Flex justify='center' align='center' w='full'>
+      <FormControl w='xl'>
+        <AutoComplete
+          onChange={(value, item) => {
+            console.log(item);
+            router.push(value);
+          }}
+          openOnFocus
+        >
+          <InputGroup>
+            <AutoCompleteInput variant='outline' placeholder='Search' />
+            <InputLeftElement>
+              <SearchIcon />
+            </InputLeftElement>
+          </InputGroup>
+          <AutoCompleteList w='full'>
+            {paths.map(path => (
+              <NextLink key={path.id} href={path.id} passHref>
+                <a>
+                  <AutoCompleteItem
+                    value={path.id}
+                    label={path.title}
+                    textTransform='capitalize'
+                    w='fit-content'
+                  >
+                    <Image
+                      src={path.image}
+                      alt={path.title}
+                      borderRadius='full'
+                      width={19}
+                    />
+                    <Text ml='4'>{path.title}</Text>
+                  </AutoCompleteItem>
+                </a>
+              </NextLink>
+            ))}
+          </AutoCompleteList>
+        </AutoComplete>
+      </FormControl>
+    </Flex>
+  );
+};
 
 const NavLink = ({ children }: PropsWithChildren<{}>) => (
   <Link
@@ -36,9 +94,11 @@ export default function Nav() {
             </a>
           </NextLink>
 
-          <Flex alignItems={'center'}>
+          <Search />
+
+          {/* <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}></Stack>
-          </Flex>
+          </Flex> */}
         </Flex>
       </Box>
     </>
