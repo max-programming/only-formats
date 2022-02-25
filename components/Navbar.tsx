@@ -11,6 +11,11 @@ import {
   Text,
   Image,
   InputLeftElement,
+  IconButton,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  useDisclosure,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import {
@@ -84,6 +89,7 @@ const NavLink = ({ children }: PropsWithChildren<{}>) => (
 );
 
 export default function Nav() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={6}>
@@ -94,11 +100,16 @@ export default function Nav() {
             </a>
           </NextLink>
 
-          <Search />
+          <IconButton aria-label='search' onClick={onOpen}>
+            <SearchIcon />
+          </IconButton>
 
-          {/* <Flex alignItems={'center'}>
-            <Stack direction={'row'} spacing={7}></Stack>
-          </Flex> */}
+          <Modal isOpen={isOpen} onClose={onClose}>
+            <ModalOverlay />
+            <ModalContent>
+              <Search />
+            </ModalContent>
+          </Modal>
         </Flex>
       </Box>
     </>
