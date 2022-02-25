@@ -30,6 +30,7 @@ const Home: NextPage = () => {
                       _hover={{
                         borderColor: 'teal.100',
                         transform: 'translateY(-10px)',
+                        bg: 'blackAlpha.300',
                       }}
                     >
                       <Image
