@@ -40,7 +40,12 @@ const SQLFormat: NextPage = () => {
     isUpper?: boolean;
   }) => {
     setFormatted(
-      sqlFormat(val || unformatted, lang || language, indentation, isUpper)
+      sqlFormat(
+        val || unformatted,
+        lang || language,
+        indentation || indent,
+        isUpper || isUppercase
+      )
     );
   };
 
