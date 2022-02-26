@@ -33,5 +33,10 @@
     "id": "/formatter/java",
     "title": "Java Code Formatter",
     "image": "https://simpleicons.vercel.app/java/007396"
+  },
+  {
+    "id": "/formatter/sql",
+    "title": "SQL Query Formatter (10 options)",
+    "image": "https://simpleicons.vercel.app/postgresql/4169E1"
   }
 ]
