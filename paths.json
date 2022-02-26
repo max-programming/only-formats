@@ -28,5 +28,10 @@
     "id": "/formatter/php",
     "title": "PHP Code Formatter",
     "image": "https://simpleicons.vercel.app/php/777BB4"
+  },
+  {
+    "id": "/formatter/java",
+    "title": "Java Code Formatter",
+    "image": "https://simpleicons.vercel.app/java/007396"
   }
 ]
