@@ -45,11 +45,7 @@ const Search = () => {
               <SearchIcon />
             </InputLeftElement>
           </InputGroup>
-          <AutoCompleteList
-            w='full'
-            justifyContent='center'
-            alignItems='center'
-          >
+          <AutoCompleteList>
             {paths.map(path => (
               <NextLink key={path.id} href={path.id} passHref>
                 <a>
