@@ -18,7 +18,7 @@ const variants = {
 const Layout = ({ children, title, description }: PropsWithChildren<Props>) => (
   <div>
     <NextSeo
-      title={title}
+      title={title.replace('<br /> ', '')}
       description={description}
       openGraph={{
         title,
