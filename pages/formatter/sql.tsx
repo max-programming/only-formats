@@ -113,6 +113,14 @@ const SQLFormat: NextPage = () => {
           unformattedCode={unformatted || ''}
           formattedCode={formatted || ''}
           handleChange={handleChange}
+          clearData={() => {
+            setFormatted('');
+            setUnformatted('');
+          }}
+          pasteCode={async () => {
+            setUnformatted(await navigator.clipboard.readText());
+            format({ val: await navigator.clipboard.readText() });
+          }}
         />
       </Layout>
     </>

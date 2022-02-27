@@ -14,13 +14,7 @@ const MarkdownFormat: NextPage = () => {
   const [unformatted, setUnformatted] = useState('');
   const [formatted, setFormatted] = useState('');
 
-  const format = ({
-    val,
-    indentation,
-  }: {
-    val?: string;
-    indentation?: number;
-  }) => {
+  const format = ({ val }: { val?: string }) => {
     setFormatted(
       formatCode({
         code: val || unformatted,
@@ -46,6 +40,14 @@ const MarkdownFormat: NextPage = () => {
           unformattedCode={unformatted || ''}
           formattedCode={formatted || ''}
           handleChange={handleChange}
+          clearData={() => {
+            setFormatted('');
+            setUnformatted('');
+          }}
+          pasteCode={async () => {
+            setUnformatted(await navigator.clipboard.readText());
+            format({ val: await navigator.clipboard.readText() });
+          }}
         />
       </Layout>
     </>

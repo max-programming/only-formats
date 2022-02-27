@@ -1,12 +1,12 @@
 import Layout from '@/components/Layout';
 import type { NextPage } from 'next';
 import Setting from '@/components/Setting';
-import { 
-  NumberInput, 
+import {
+  NumberInput,
   NumberInputField,
   NumberInputStepper,
   NumberIncrementStepper,
-  NumberDecrementStepper 
+  NumberDecrementStepper,
 } from '@chakra-ui/react';
 import usePath from '@/utils/usePath';
 import formatCode from '@/utils/formatCode';
@@ -52,10 +52,15 @@ const HTMLFormat: NextPage = () => {
       <Layout title={path.title}>
         <Header title={path.title} imageSrc={path.image} />
         <Setting title='Indentation'>
-          <NumberInput onChange={(_, val) => {
+          <NumberInput
+            onChange={(_, val) => {
               setIndent(val);
               format({ indentation: val });
-          }} defaultValue={indent} min={1} max={10}>
+            }}
+            defaultValue={indent}
+            min={1}
+            max={10}
+          >
             <NumberInputField />
             <NumberInputStepper>
               <NumberIncrementStepper />
@@ -68,6 +73,14 @@ const HTMLFormat: NextPage = () => {
           unformattedCode={unformatted || ''}
           formattedCode={formatted || ''}
           handleChange={handleChange}
+          clearData={() => {
+            setFormatted('');
+            setUnformatted('');
+          }}
+          pasteCode={async () => {
+            setUnformatted(await navigator.clipboard.readText());
+            format({ val: await navigator.clipboard.readText() });
+          }}
         />
       </Layout>
     </>

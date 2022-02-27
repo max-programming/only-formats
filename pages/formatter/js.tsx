@@ -1,13 +1,13 @@
 import Layout from '@/components/Layout';
 import type { NextPage } from 'next';
 import Setting from '@/components/Setting';
-import { 
-  NumberInput, 
+import {
+  NumberInput,
   NumberInputField,
   NumberInputStepper,
   NumberIncrementStepper,
   NumberDecrementStepper,
-  Switch
+  Switch,
 } from '@chakra-ui/react';
 import usePath from '@/utils/usePath';
 import formatCode from '@/utils/formatCode';
@@ -67,10 +67,15 @@ const JS: NextPage = () => {
           />
         </Setting>
         <Setting title='Indentation'>
-          <NumberInput onChange={(_, val) => {
-                setIndent(val);
-                format({ indentation: val });
-            }} defaultValue={indent} min={1} max={10}>
+          <NumberInput
+            onChange={(_, val) => {
+              setIndent(val);
+              format({ indentation: val });
+            }}
+            defaultValue={indent}
+            min={1}
+            max={10}
+          >
             <NumberInputField />
             <NumberInputStepper>
               <NumberIncrementStepper />
@@ -83,6 +88,14 @@ const JS: NextPage = () => {
           unformattedCode={unformatted || ''}
           formattedCode={formatted || ''}
           handleChange={handleChange}
+          clearData={() => {
+            setFormatted('');
+            setUnformatted('');
+          }}
+          pasteCode={async () => {
+            setUnformatted(await navigator.clipboard.readText());
+            format({ val: await navigator.clipboard.readText() });
+          }}
         />
       </Layout>
     </>
