@@ -20,7 +20,40 @@ const Layout = ({ children, title, description }: PropsWithChildren<Props>) => (
     <NextSeo
       title={title}
       description={description}
-      openGraph={{ title, description }}
+      openGraph={{
+        title,
+        description,
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://onlyformats.netlify.app',
+        site_name: 'Only Formats',
+        images: [
+          {
+            url: 'https://onlyformats.netlify.app/logo.png',
+            width: 100,
+            height: 100,
+            alt: 'Og Image Alt',
+          },
+        ],
+      }}
+      twitter={{
+        handle: '@MaxProgramming1',
+        cardType: 'summary',
+      }}
+      additionalLinkTags={[
+        {
+          rel: 'icon',
+          href: '/favicon.ico',
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/apple-touch-icon.png',
+        },
+        {
+          rel: 'manifest',
+          href: '/manifest.json',
+        },
+      ]}
     />
     <Nav />
     <Container maxW='full'>
