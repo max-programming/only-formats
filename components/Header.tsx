@@ -14,7 +14,7 @@ export default function Header({ title, imageSrc }: Props) {
         fontSize={useBreakpointValue({ lg: '4xl', md: '3xl', sm: '2xl' })}
         fontWeight='semibold'
       >
-        {title}
+        {title.replace('<br /> ', '')}
       </Heading>
     </Flex>
   );

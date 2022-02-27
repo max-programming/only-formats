@@ -59,10 +59,7 @@ const Search = () => {
                     align='center'
                     w='sm'
                   >
-                    <Text
-                      ml='4'
-                      dangerouslySetInnerHTML={{ __html: path.title }}
-                    />
+                    <Text ml='4'>{path.title.replace('<br /> ', '')}</Text>
                     <Image src={path.image} alt={path.title} width='10' />
                   </AutoCompleteItem>
                 </a>
