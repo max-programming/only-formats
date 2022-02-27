@@ -10,6 +10,7 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import PathCard from '@/components/PathCard';
 
 const Home: NextPage = () => {
   return (
@@ -23,41 +24,12 @@ const Home: NextPage = () => {
           h='75vh'
         >
           {paths.map(path => (
-            <Link href={path.id} key={path.id}>
-              <a>
-                <Center>
-                  <Box
-                    maxW='72'
-                    transition='all 0.3s ease'
-                    borderWidth='2px'
-                    borderRadius='lg'
-                    overflow='hidden'
-                    _hover={{
-                      borderColor: 'teal.100',
-                      transform: 'translateY(-10px)',
-                      bg: 'blackAlpha.300',
-                    }}
-                  >
-                    <Image
-                      rounded={'lg'}
-                      height={230}
-                      width={282}
-                      objectFit={'scale-down'}
-                      mx='auto'
-                      src={path.image}
-                      alt=''
-                    />
-                    <Box p={6}>
-                      <Heading
-                        textAlign='center'
-                        size='md'
-                        dangerouslySetInnerHTML={{ __html: path.title }}
-                      />
-                    </Box>
-                  </Box>
-                </Center>
-              </a>
-            </Link>
+            <PathCard
+              image={path.image}
+              id={path.id}
+              title={path.title}
+              key={path.id}
+            />
           ))}
         </SimpleGrid>
       </Layout>
