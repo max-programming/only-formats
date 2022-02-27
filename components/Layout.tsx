@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo';
 import { motion } from 'framer-motion';
 import { Container } from '@chakra-ui/react';
 import Nav from './Navbar';
+import Footer from './Footer';
 
 type Props = {
   title: string;
@@ -67,6 +68,7 @@ const Layout = ({ children, title, description }: PropsWithChildren<Props>) => (
         {children}
       </motion.main>
     </Container>
+    <Footer />
   </div>
 );
 
