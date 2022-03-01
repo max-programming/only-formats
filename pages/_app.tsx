@@ -6,6 +6,7 @@ import NextNProgress from 'nextjs-progressbar';
 import { extendTheme, type ThemeConfig } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import importLangs from 'utils/importLangs.js';
+import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',
@@ -24,6 +25,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}
       >
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
+          <GoogleAnalytics
+            measurementId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
+          />
+        )}
+
         <Component {...pageProps} />
       </AnimatePresence>
     </ChakraProvider>
