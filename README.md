@@ -8,12 +8,18 @@
 <h3 align="center">The quickest way to format code!</h3>
 
 <p align="center">
+  <a href="https://gitmoji.dev">
+    <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=for-the-badge" alt="Gitmoji">
+  </a>
   <a href="https://choosealicense.com/licenses/mit/">
-    <img src="https://img.shields.io/apm/l/atomic-design-ui.svg?" alt="License" />
+    <img src="https://img.shields.io/apm/l/atomic-design-ui.svg?style=for-the-badge" alt="License" />
+  </a>
+  <a href="https://app.netlify.com/sites/onlyformats/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/2c0d899a-feb1-479c-b193-110cf902e8f3/deploy-status" alt="Netlify Status" />
   </a>
 </p>
 
-#### ✨ The live [Instance](https://onlyformats.netlify.app/logo.png)
+#### ✨ The live [Instance](https://onlyformats.netlify.app/)
 
 <!-- #### Here's a sneak peak to the app - [Link to the GIF](https://cdn.hashnode.com/res/hashnode/image/upload/v1627542797932/0TNW01u9N.gif) -->
 

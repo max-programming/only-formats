@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout';
+/*import Layout from '@/components/Layout';
 import type { NextPage } from 'next';
 import Setting from '@/components/Setting';
 import {
@@ -87,5 +87,9 @@ const JavaFormat: NextPage = () => {
     </>
   );
 };
-
 export default JavaFormat;
+*/
+
+export default function TempJava() {
+  return <h1>Under development <a href="https://github.com/max-programming/only-formats/issues/2">ISSUE</a></h1>
+};

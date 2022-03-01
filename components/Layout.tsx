@@ -68,7 +68,7 @@ const Layout = ({ children, title, description }: PropsWithChildren<Props>) => (
         {children}
       </motion.main>
     </Container>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 );
 
