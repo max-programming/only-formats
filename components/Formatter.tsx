@@ -5,6 +5,7 @@ import {
   Icon,
   IconButton,
   Text,
+  useBreakpointValue,
   useClipboard,
   useToast,
 } from '@chakra-ui/react';
@@ -31,6 +32,7 @@ export default function Formatter({
   pasteCode,
 }: Props) {
   const { onCopy } = useClipboard(formattedCode);
+  const buttonSize = useBreakpointValue({ base: 'md', lg: 'lg' });
   const toast = useToast({
     title: 'Code copied!',
     status: 'success',
@@ -54,12 +56,17 @@ export default function Formatter({
               Input Code
             </Text>
             <Flex gap={2}>
-              <Button colorScheme='teal' size='lg' gap={2} onClick={pasteCode}>
+              <Button
+                colorScheme='teal'
+                size={buttonSize}
+                gap={2}
+                onClick={pasteCode}
+              >
                 <PasteIcon />
                 Paste
               </Button>
               <IconButton
-                size='lg'
+                size={buttonSize}
                 colorScheme='teal'
                 aria-label='clear'
                 onClick={clearData}
@@ -81,7 +88,7 @@ export default function Formatter({
             </Text>
             <Button
               colorScheme='teal'
-              size='lg'
+              size={buttonSize}
               gap={2}
               onClick={() => {
                 onCopy();
