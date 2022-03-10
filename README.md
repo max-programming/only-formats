@@ -10,9 +10,10 @@
 <p align="center">
   <a href="https://gitmoji.dev">
     <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=for-the-badge" alt="Gitmoji">
-  </a>
+  </a>  
+  <img src="https://img.shields.io/apm/l/atomic-design-ui.svg?style=for-the-badge" alt="License" />
   <a href="https://choosealicense.com/licenses/mit/">
-    <img src="https://img.shields.io/apm/l/atomic-design-ui.svg?style=for-the-badge" alt="License" />
+    <img src="https://wakatime.com/badge/user/922890b6-2993-44b1-bfe8-6dd974a721c0/project/3edbedb7-907c-43bc-b837-48f5770bdb07.svg?style=for-the-badge" alt="Wakatime" />
   </a>
   <a href="https://app.netlify.com/sites/onlyformats/deploys">
     <img src="https://api.netlify.com/api/v1/badges/2c0d899a-feb1-479c-b193-110cf902e8f3/deploy-status" alt="Netlify Status" />
